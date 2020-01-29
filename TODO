@@ -1,0 +1,2 @@
+Add the following instruction to script:
+"git submodule add https://github.com/ThrowTheSwitch/Unity.git"
