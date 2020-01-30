@@ -1,7 +1,7 @@
 /* project and documentation in progress */
 
 # tdd_creator
-The simple script to create TDD-based project
+The simple script to create TDD-based C-project
 
 * The project structure template primarily based on James W. Grenning's book about Embedded TDD.
 * Independent blocks[1] of code which stores regardless from tests based on TDD and Unity
