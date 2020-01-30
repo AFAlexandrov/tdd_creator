@@ -52,5 +52,6 @@ Mkfile.old
 dkms.conf
 
 # Local
-Unity
 .gitmodules
+Unity/
+
