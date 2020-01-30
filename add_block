@@ -346,11 +346,10 @@ add_unity () {
 }
 
 generate_project () {
+	add_unity;
+	cd ..;
 
 	if [ -z "$flag" ]; then
-		add_unity;
-
-		cd ..;
 		if ! [ -d ${project} ]; then
 			mkdir ${project};
 		fi
