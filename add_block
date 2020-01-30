@@ -334,13 +334,24 @@ make_core_only() {
 #}
 
 
+add_unity () {
+	if ! [ -d "Unity" ]; then
+		if ! [ -x "$(command -v git)" ]; then
+		  echo 'Error: git is not installed.' >&2
+		  exit 1
+		fi
+		git init;
+		git submodule add https://github.com/ThrowTheSwitch/Unity.git;
+	fi
+}
 
 generate_project () {
 
 	if [ -z "$flag" ]; then
+		add_unity;
+
 		if ! [ -d ${project} ]; then
 			mkdir ${project};
-
 		fi
 		cd ${project};
 			make_root_folder;
@@ -354,15 +365,13 @@ generate_project () {
 	elif [ $flag == "-c" ] ; then 
 		make_core_with_all;
 		#create block with _core files 
-		#but blocks already exists  then add _core files
+		#but blocks already exists then add _core files
 	elif [ $flag == "-co" ]; then
 		make_core_only;
 		#create blocks ONLY with _core files
 	else 
 		echo '?!';
 	fi
-
-
 }
 
 generate_project;
