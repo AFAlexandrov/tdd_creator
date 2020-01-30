@@ -52,4 +52,5 @@ Mkfile.old
 dkms.conf
 
 # Local
-recursive_parser/recurcive_parser_Unity_tests
+Unity
+.gitmodules
