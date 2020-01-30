@@ -249,7 +249,7 @@ delete_block() {
 			fi
 		cd ..;
 
-		cd unity;
+		cd test;
 			if [ -d ${block} ]; then
 				rm -rf ${block};
 			fi
@@ -263,7 +263,7 @@ delete_path() {
 		sed -i "/${sed_dollar}(PROJECT_TEST_DIR)\/${block}/d" MakefileUnity.mk;
 		sed -i "/${sed_dollar}(PROJECT_HOME_DIR)\/inc\/${block}/d" MakefileUnity.mk;
 
-		cd unity;	
+		cd test;	
 			sed -i "/RUN_TEST_GROUP(${block})/d" all_tests.c 
 		cd ..;
 	cd ..;
@@ -354,7 +354,7 @@ generate_project () {
 	elif [ $flag == "-c" ] ; then 
 		make_core_with_all;
 		#create block with _core files 
-		#but blocks already exists  then add _core files  
+		#but blocks already exists  then add _core files
 	elif [ $flag == "-co" ]; then
 		make_core_only;
 		#create blocks ONLY with _core files
