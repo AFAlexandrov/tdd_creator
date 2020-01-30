@@ -23,3 +23,8 @@ The simple script to create TDD-based project
 		./add_block project_name block_name_delete -d
 
 /* to be continued... */
+
+## LICENSE
+* This code is licensed under the GNU Lesser General Public License (LGPL) version 3 as published by the Free Software Foundation.
+* It is possible to link closed-source code with the LGPL code.
+* All code files contain licensing information.
