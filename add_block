@@ -35,11 +35,11 @@ template_makefile_unity=\
 "#---- Outputs ----#\n"\
 "COMPONENT_NAME = ${project}_Unity\n\n"\
 "#--- Inputs ----#\n"\
-"UNITY_HOME = ../Unity\n"\
+"UNITY_HOME = ../tdd_creator/Unity\n"\
 "CPP_PLATFORM = Gcc\n"\
 "PROJECT_HOME_DIR = .\n"\
 "PROJECT_TEST_DIR = test\n"\
-"UNITY_BUILD_HOME = ../\n\n"\
+"UNITY_BUILD_HOME = ../tdd_creator\n\n"\
 "UNITY_CFLAGS += -Wno-missing-prototypes\n"\
 "UNITY_WARNINGFLAGS = -Wall\n"\
 "UNITY_WARNINGFLAGS = -Werror\n"\
@@ -320,6 +320,7 @@ make_core_with_all() {
 	# 1: check in MakefileUnity with help sed
 	# 2: check in directry ,for exapmle, inc 
 }
+
 make_core_only() {
 
 	echo "_core inly"
@@ -340,7 +341,6 @@ add_unity () {
 		  echo 'Error: git is not installed.' >&2
 		  exit 1
 		fi
-		git init;
 		git submodule add https://github.com/ThrowTheSwitch/Unity.git;
 	fi
 }
@@ -350,6 +350,7 @@ generate_project () {
 	if [ -z "$flag" ]; then
 		add_unity;
 
+		cd ..;
 		if ! [ -d ${project} ]; then
 			mkdir ${project};
 		fi
