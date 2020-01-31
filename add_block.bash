@@ -324,7 +324,7 @@ make_core_with_all() {
 make_core_only() {
 
 	echo "_core inly"
-		
+
 }
 
 
@@ -345,8 +345,16 @@ add_unity () {
 	fi
 }
 
+add_gitignore () {
+	if ! [ -f "../.gitignore" ]; then
+		cp .gitignore ../;
+	fi
+	echo -e ${project}_Unity_tests >> ../.gitignore;
+}
+
 generate_project () {
 	add_unity;
+	add_gitignore;
 	cd ..;
 
 	if [ -z "$flag" ]; then
