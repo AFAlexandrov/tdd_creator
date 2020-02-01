@@ -353,7 +353,7 @@ add_gitignore () {
 }
 
 generate_project () {
-	add_unity;
+	# add_unity;
 	add_gitignore;
 	cd ..;
 
