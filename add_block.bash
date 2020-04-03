@@ -282,8 +282,7 @@ delete_path() {
 
 make_block () { 
 	#make_project
-	create_makefiles; 
-	append_makefiles;
+	create_makefiles & append_makefiles;
 	fill_headers;
 	fill_sources;
 	fill_tests;
