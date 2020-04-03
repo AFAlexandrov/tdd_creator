@@ -26,7 +26,17 @@ test=${block}_test.c
 test_runner=${block}_test_runner.c
 
 template_makefile=\
-"all:\n\tmake -f MakefileUnity.mk\n\n"\
+"all:\n"\
+"\t{ \\\\\n"\
+"\tcd ../; \\\\\n"\
+"\tgit submodule init; \\\\\n"\
+"\tgit submodule update; \\\\\n"\
+"\tcd tdd_creator/; \\\\\n"\
+"\tgit submodule init; \\\\\n"\
+"\tgit submodule update; \\\\\n"\
+"\tcd ../${project}/; \\\\\n"\
+"\t}\n"\
+"\tmake -f MakefileUnity.mk\n\n"\
 "clean:\n\tmake -f MakefileUnity.mk clean\n\n"
 
 template_makefile_unity=\
@@ -272,7 +282,7 @@ delete_path() {
 
 make_block () { 
 	#make_project
-	create_makefiles;
+	create_makefiles; 
 	append_makefiles;
 	fill_headers;
 	fill_sources;
